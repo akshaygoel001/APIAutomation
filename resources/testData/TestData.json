@@ -1,0 +1,19 @@
+{
+  "username": "postman",
+  "password": "password",
+  "endpoint": "/users",
+  "endpointB": "/posts",
+  "queryParamB": "2",
+  "languages": [
+    "Java",
+    "Python",
+    "Javascript"
+  ],
+  "contact": [
+    "e-mail: demo.test@gmail.com",
+    "phone: 9848022331",
+    "city: Hyderabad",
+    "Area: Madapur",
+    "State: Telangana"
+  ]
+}
