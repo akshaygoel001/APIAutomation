@@ -37,12 +37,12 @@ public class JSONReader {
         return jsonObject;
     }
 
-    public static JSONArray getJSONArrayData(String key) throws IOException, ParseException {
+    public static JSONArray getJSONArrayData(String key) {
         JSONObject jsonObject = getJsonData();
         JSONArray jsonArray = (JSONArray) jsonObject.get(key);
         return jsonArray;
     }
-    public static Object getJSONArrayData(String key, int index) throws IOException, ParseException {
+    public static Object getJSONArrayData(String key, int index) {
         JSONObject jsonObject = getJsonData();
         JSONArray jsonArray = (JSONArray) jsonObject.get(key);
         return jsonArray.get(index);
