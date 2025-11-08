@@ -35,7 +35,7 @@ public class postUsers {
         return fileInputStream;
     }
 
-    @Test
+    @Test(description = "validatePostWithString")
     public void validatePostWithString() {
 
         Response response = given().
