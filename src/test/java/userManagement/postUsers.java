@@ -1,11 +1,14 @@
 package userManagement;
 
+import core.ContentType;
 import core.StatusCode;
 import io.restassured.response.Response;
 import org.apache.commons.io.IOUtils;
 import org.testng.annotations.Test;
 import pojo.CityRequest;
 import pojo.PostRequestBody;
+import utils.JSONReader;
+import utils.PropertyReader;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,11 +39,11 @@ public class postUsers {
     public void validatePostWithString() {
 
         Response response = given().
-                header("x-api-key", "reqres-free-v1")
-                .header("Content-Type", "application/json")
-                .body("{\"name\":\"akshayg\",\"job\":\"QA Engineer\"}")
+                 header("x-api-key", JSONReader.getTestData("header"))
+                .header("Content-Type", ContentType.APPLICATION_JSON.type)
+                .body("{\"name\":\"aks\",\"job\":\"QA Auto\"}")
                 .when()
-                .post("https://reqres.in/api/users")
+                .post(PropertyReader.propertyReader("config.properties","server") + JSONReader.getTestData("endpoint"))
                 .then()
                 .extract().response();
         assertEquals(response.getStatusCode(), StatusCode.CREATED.code);

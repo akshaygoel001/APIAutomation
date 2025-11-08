@@ -3,6 +3,7 @@
   "password": "password",
   "endpoint": "/users",
   "endpointB": "/posts",
+  "header" : "reqres-free-v1",
   "queryParamB": "2",
   "languages": [
     "Java",
